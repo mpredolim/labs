@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Resumo FII – Dividendos Fevereiro/2026</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style>
+      .wrapper { width: 900px; }
+      footer    { width: 900px; }
+
+      table { width: 100%; border-collapse: collapse; margin: 0 0 20px; }
+      th    { background: #c6eafa; color: #222; cursor: pointer; user-select: none; }
+      th:hover { background: #a8d8f0; }
+      th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #ccc; font-size: 13px; }
+      tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+      tr:hover           { background: rgba(0,150,200,0.08); }
+
+      .rank-1 td:first-child { font-weight: 700; color: #c8890a; }
+      .rank-2 td:first-child { font-weight: 700; color: #888; }
+      .rank-3 td:first-child { font-weight: 700; color: #7a4f2e; }
+
+      .dy-high { color: #1a7a1a; font-weight: 700; }
+      .dy-mid  { color: #555; }
+      .dy-low  { color: #999; }
+
+      .badge {
+        display: inline-block; padding: 2px 7px; border-radius: 10px;
+        font-size: 11px; font-weight: 700; color: #fff;
+      }
+      .badge-logistica  { background: #4a90d9; }
+      .badge-shopping   { background: #9b59b6; }
+      .badge-papel      { background: #e67e22; }
+      .badge-hibrido    { background: #27ae60; }
+      .badge-lajes      { background: #2c3e50; }
+      .badge-fundos     { background: #c0392b; }
+      .badge-residencial{ background: #16a085; }
+
+      .sort-indicator { font-size: 10px; margin-left: 4px; color: #069; }
+
+      .legend { font-size: 12px; color: #666; margin-bottom: 8px; }
+      .note   { font-size: 12px; color: #888; font-style: italic; margin-top: -10px; }
+
+      @media print, screen and (max-width: 940px) {
+        .wrapper, footer { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Resumo FII – Dividendos</h1>
+        <p>Melhores Fundos de Investimento Imobiliário – Fevereiro/2026</p>
+        <p class="view"><a href="https://github.com/mpredolim/labs">Ver no GitHub <small>mpredolim/labs</small></a></p>
+        <ul>
+          <li><a href="index.html"><strong>← Voltar</strong></a></li>
+        </ul>
+      </header>
+
+      <section>
+        <h3>Top FIIs por Dividend Yield (Fevereiro/2026)</h3>
+        <p>Comparação dos principais Fundos de Investimento Imobiliário listados na B3, ordenados por dividend yield mensal.
+           Clique nos cabeçalhos para reordenar a tabela.</p>
+        <p class="note">Dados ilustrativos com base em valores de referência de fevereiro/2026. Não constitui recomendação de investimento.</p>
+
+        <div class="legend">
+          <span class="badge badge-logistica">Logística</span>&nbsp;
+          <span class="badge badge-shopping">Shopping</span>&nbsp;
+          <span class="badge badge-papel">Papel/CRI</span>&nbsp;
+          <span class="badge badge-hibrido">Híbrido</span>&nbsp;
+          <span class="badge badge-lajes">Lajes Corp.</span>&nbsp;
+          <span class="badge badge-fundos">Fundo de Fundos</span>&nbsp;
+          <span class="badge badge-residencial">Residencial</span>
+        </div>
+
+        <table id="fiiTable">
+          <thead>
+            <tr>
+              <th data-col="0">#</th>
+              <th data-col="1">Ticker</th>
+              <th data-col="2">Fundo</th>
+              <th data-col="3">Segmento</th>
+              <th data-col="4">Preço (R$)<span class="sort-indicator"></span></th>
+              <th data-col="5">Dividendo/cota (R$)<span class="sort-indicator"></span></th>
+              <th data-col="6">DY Mensal (%)<span class="sort-indicator">▼</span></th>
+              <th data-col="7">DY Anual Est. (%)<span class="sort-indicator"></span></th>
+            </tr>
+          </thead>
+          <tbody id="fiiBody">
+          </tbody>
+        </table>
+
+        <h3>Destaques do Mês</h3>
+        <ul>
+          <li><strong>Maior DY:</strong> MXRF11 (Maxi Renda) com <strong>1,32%</strong> ao mês — fundo de papel com alta exposição a CRI com IPCA+.</li>
+          <li><strong>Melhor custo-benefício logístico:</strong> BTLG11 (BTG Pactual Logística) com DY de <strong>1,18%</strong> e portfólio diversificado de galpões.</li>
+          <li><strong>Shopping em recuperação:</strong> XPML11 (XP Malls) com DY de <strong>1,05%</strong>, impulsionado pela retomada do varejo presencial.</li>
+          <li><strong>Renda híbrida:</strong> KNRI11 (Kinea Renda Imobiliária) apresenta consistência histórica com DY de <strong>0,92%</strong>.</li>
+        </ul>
+
+        <h3>Resumo por Segmento</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Segmento</th>
+              <th>Qtd. FIIs</th>
+              <th>DY Médio Mensal (%)</th>
+              <th>Tendência</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-papel">Papel/CRI</span></td>
+              <td>3</td>
+              <td>1,22%</td>
+              <td>↑ Alta — beneficiado por juros elevados</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-logistica">Logística</span></td>
+              <td>2</td>
+              <td>1,11%</td>
+              <td>→ Estável — contratos longos indexados</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-shopping">Shopping</span></td>
+              <td>2</td>
+              <td>0,99%</td>
+              <td>↑ Recuperação gradual do varejo</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-fundos">Fundo de Fundos</span></td>
+              <td>2</td>
+              <td>0,98%</td>
+              <td>→ Estável — diversificação reduz volatilidade</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-hibrido">Híbrido</span></td>
+              <td>2</td>
+              <td>0,89%</td>
+              <td>→ Estável — mistura tijolo + papel</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-lajes">Lajes Corp.</span></td>
+              <td>1</td>
+              <td>0,72%</td>
+              <td>↓ Vacância ainda elevada nas grandes cidades</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <footer>
+      <p>Projeto mantido por <a href="https://github.com/mpredolim">mpredolim</a></p>
+      <p>Hospedado no GitHub Pages &mdash; Tema por <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <script>
+      var fiis = [
+        { ticker: "MXRF11", nome: "Maxi Renda FII",               segmento: "papel",      preco: 10.52, dividendo: 0.139, rank: 1 },
+        { ticker: "CVBI11", nome: "VBI CRI FII",                  segmento: "papel",      preco: 96.10, dividendo: 1.18,  rank: 2 },
+        { ticker: "BTLG11", nome: "BTG Pactual Logística FII",    segmento: "logistica",  preco: 106.40, dividendo: 1.255, rank: 3 },
+        { ticker: "HGLG11", nome: "CSHG Logística FII",           segmento: "logistica",  preco: 162.80, dividendo: 1.70, rank: 4 },
+        { ticker: "VRTA11", nome: "Fator Verità FII",             segmento: "papel",      preco: 112.30, dividendo: 1.14, rank: 5 },
+        { ticker: "XPML11", nome: "XP Malls FII",                 segmento: "shopping",   preco: 100.20, dividendo: 1.05, rank: 6 },
+        { ticker: "VISC11", nome: "Vinci Shopping Centers FII",   segmento: "shopping",   preco: 104.60, dividendo: 0.98, rank: 7 },
+        { ticker: "BCFF11", nome: "BCF Capital FII",              segmento: "fundos",     preco: 79.40,  dividendo: 0.80, rank: 8 },
+        { ticker: "HFOF11", nome: "Hedge Fund of Funds FII",      segmento: "fundos",     preco: 74.50,  dividendo: 0.73, rank: 9 },
+        { ticker: "KNRI11", nome: "Kinea Renda Imobiliária FII",  segmento: "hibrido",    preco: 152.30, dividendo: 1.40, rank: 10 },
+        { ticker: "RBRF11", nome: "RBR Alpha Multiestratégia",    segmento: "hibrido",    preco: 75.20,  dividendo: 0.66, rank: 11 },
+        { ticker: "BRCR11", nome: "BC Fund FII",                  segmento: "lajes",      preco: 69.80,  dividendo: 0.50, rank: 12 },
+      ];
+
+      var segmentoLabel = {
+        papel:      "Papel/CRI",
+        logistica:  "Logística",
+        shopping:   "Shopping",
+        hibrido:    "Híbrido",
+        lajes:      "Lajes Corp.",
+        fundos:     "Fundo de Fundos",
+        residencial:"Residencial"
+      };
+
+      var rankClass = { 1: "rank-1", 2: "rank-2", 3: "rank-3" };
+
+      function dyClass(dy) {
+        if (dy >= 1.1) return "dy-high";
+        if (dy >= 0.85) return "dy-mid";
+        return "dy-low";
+      }
+
+      function renderTable(data) {
+        var body = document.getElementById("fiiBody");
+        body.innerHTML = "";
+        data.forEach(function(f, idx) {
+          var dy = (f.dividendo / f.preco * 100);
+          var dyAnual = (dy * 12);
+          var rClass = rankClass[f.rank] || "";
+          var tr = "<tr class='" + rClass + "'>" +
+            "<td>" + (idx + 1) + "</td>" +
+            "<td><strong>" + f.ticker + "</strong></td>" +
+            "<td>" + f.nome + "</td>" +
+            "<td><span class='badge badge-" + f.segmento + "'>" + segmentoLabel[f.segmento] + "</span></td>" +
+            "<td>R$ " + f.preco.toFixed(2).replace(".", ",") + "</td>" +
+            "<td>R$ " + f.dividendo.toFixed(2).replace(".", ",") + "</td>" +
+            "<td class='" + dyClass(dy) + "'>" + dy.toFixed(2).replace(".", ",") + "%</td>" +
+            "<td>" + dyAnual.toFixed(2).replace(".", ",") + "%</td>" +
+            "</tr>";
+          body.innerHTML += tr;
+        });
+      }
+
+      var sortAsc = false;
+      var lastCol = 6;
+
+      function clearIndicators() {
+        document.querySelectorAll("#fiiTable th .sort-indicator").forEach(function(el) {
+          el.textContent = "";
+        });
+      }
+
+      document.querySelectorAll("#fiiTable th").forEach(function(th) {
+        th.addEventListener("click", function() {
+          var col = parseInt(th.getAttribute("data-col"));
+          clearIndicators();
+          if (lastCol === col) { sortAsc = !sortAsc; } else { sortAsc = false; lastCol = col; }
+          th.querySelector(".sort-indicator").textContent = sortAsc ? "▲" : "▼";
+
+          var sorted = fiis.slice().sort(function(a, b) {
+            var vals = [
+              [a.rank, b.rank],
+              [a.ticker, b.ticker],
+              [a.nome, b.nome],
+              [a.segmento, b.segmento],
+              [a.preco, b.preco],
+              [a.dividendo, b.dividendo],
+              [a.dividendo / a.preco, b.dividendo / b.preco],
+              [a.dividendo / a.preco * 12, b.dividendo / b.preco * 12],
+            ];
+            var av = vals[col][0], bv = vals[col][1];
+            if (av < bv) return sortAsc ? -1 : 1;
+            if (av > bv) return sortAsc ? 1 : -1;
+            return 0;
+          });
+          renderTable(sorted);
+        });
+      });
+
+      // Initial render sorted by DY descending
+      var initialData = fiis.slice().sort(function(a, b) {
+        return (b.dividendo / b.preco) - (a.dividendo / a.preco);
+      });
+      renderTable(initialData);
+    </script>
+  </body>
+</html>
